@@ -1,0 +1,19 @@
+CREATE TABLE clothing_store(id INTEGER PRIMARY KEY, name TEXT, cost INTEGER, colors INTEGER, sizes INTEGER);
+INSERT INTO clothing_store VALUES (1, "short sleeves", 10, 3, 5);
+INSERT INTO clothing_store VALUES (2, "long sleeves", 15, 5, 5);
+INSERT INTO clothing_store VALUES (3, "hoodies", 30, 4, 5);
+INSERT INTO clothing_store VALUES (4, "crewnecks", 25, 3, 5); 
+INSERT INTO clothing_store VALUES (5, " high waisted jeans", 100, 2, 10); 
+INSERT INTO clothing_store VALUES (6, "ripped jeans", 120, 2, 10); 
+INSERT INTO clothing_store VALUES (7, "joggers", 50, 10, 5); 
+INSERT INTO clothing_store VALUES (8, "leggings", 50, 10, 5);
+INSERT INTO clothing_store VALUES (9, "sweatpants", 40, 5, 5); 
+INSERT INTO clothing_store VALUES (10, "graphic tees", 20, 10, 5); 
+INSERT INTO clothing_store VALUES (11, "jackets", 150, 3, 5);
+INSERT INTO clothing_store VALUES (12, "long coats", 200, 2, 5);
+INSERT INTO clothing_store VALUES (13, "sweaters", 50, 5,5);
+INSERT INTO clothing_store VALUES (14, "pajamas", 50,4,5);
+INSERT INTO clothing_store VALUES (15, "socks", 5,4,3);
+SELECT * FROM clothing_store ORDER BY cost;
+SELECT SUM(colors+sizes) FROM clothing_store;
+
