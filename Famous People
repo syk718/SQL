@@ -1,0 +1,76 @@
+/* Create table about the people and what they do here */
+CREATE TABLE celebrities (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, field TEXT);
+
+INSERT INTO celebrities(name, field) VALUES ('J.K. Rowling', 'author');
+INSERT INTO celebrities(name, field) VALUES ('Beyonce', 'singer');
+INSERT INTO celebrities(name, field) VALUES ('Harry Potter', 'fictional character');
+INSERT INTO celebrities(name, field) VALUES ('Tupac', 'rapper');
+INSERT INTO celebrities(name, field) VALUES ('Hunter S. Thompson', 'author');
+INSERT INTO celebrities(name, field) VALUES ('Kurt Vonnegut', 'author');
+INSERT INTO celebrities(name, field) VALUES ('Brad Pitt', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Jennifer Anniston', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Taylor Swift', 'singer');
+INSERT INTO celebrities(name, field) VALUES ('Sam Smith', 'singer');
+INSERT INTO celebrities(name, field) VALUES ('Bruno Mars', 'singer');
+INSERT INTO celebrities(name, field) VALUES ('Daniel Craig', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Edward Norton', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Kate Hudson', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Leslie Odom Jr.' , 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Kahtryn Hahn', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Katniss Everdeen', 'fictional character');
+INSERT INTO celebrities(name, field) VALUES ('Voldermort', 'fictional character');
+INSERT INTO celebrities(name, field) VALUES ('Taylor Jenkins Reid', 'author');
+INSERT INTO celebrities(name, field) VALUES ('Delia Owens', 'author');
+INSERT INTO celebrities(name, field) VALUES ('Whitney Houston', 'singer');
+INSERT INTO celebrities(name, field) VALUES ('Matthew McConaughey', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Lin-Manuel Miranda', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Matthew Perry', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Courtney Cox', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Lisa Kudrow', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Matt LeBlanc', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('David Schwimmer', 'actor');
+INSERT INTO celebrities(name, field) VALUES ('Harry Potter', 'fictional character');
+INSERT INTO celebrities(name, field) VALUES ('Hagrid', 'fictional character');
+INSERT INTO celebrities(name, field) VALUES ('Ron Weasley', 'fictional character');
+INSERT INTO celebrities(name, field) VALUES ('Hermione Granger', 'fictional character');
+INSERT INTO celebrities(name, field) VALUES ('Ginny Weasley', 'fictional character');
+CREATE TABLE most_known_for (name TEXT, "most known production" TEXT);
+INSERT INTO most_known_for (name, "most known production") VALUES ('J.K. Rowling', 'Harry Potter Series');
+INSERT INTO most_known_for (name, 'most known production') VALUES ('Beyonce', 'Single Ladies');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Tupac', 'California Love');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Hunter S. Thompson', 'Fear & Loathing in Las Vegas');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Kurt Vonnegut', 'Slaughter House Five');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Brad Pitt', 'Fight Club');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Jennifer Anniston' , 'Friends');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Taylor Swift', 'Anti Hero');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Sam Smith' , 'Unholy');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Bruno Mars' , 'Just the Way You Are');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Daniel Craig', 'James Bond');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Edward Norton' , 'Fight Club');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Kate Hudson' , 'How to Lose a Guy in Ten Days');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Leslie Odom Jr.', 'Hamilton');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Kathryn Hahn', 'Step Brothers');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Katniss Everdeen', 'The Hunger Games Series');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Voldemort', 'Harry Potter Series');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Taylor Jenkins Reid' , 'Daisy Jones and the Six');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Delia Owens', 'Where the Crawdads Sing');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Whitney Houston','I Will Always Love You');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Matthew McConaughey', 'How to Lose A Guy in Ten Days');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Lin-Manuel Miranda','Hamilton');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Matthew Perry', 'Friends');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Courtney Cox', 'Friends');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Lisa Kudrow', 'Friends');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Matt LeBlanc', 'Friends');
+INSERT INTO most_known_for (name, "most known production") VALUES ('David Schwimmer', 'Friends');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Harry Potter', 'Harry Potter Series');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Hagrid','Harry Potter Series');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Ron Weasley','Harry Potter Series');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Hermione Granger','Harry Potter Series');
+INSERT INTO most_known_for (name, "most known production") VALUES ('Ginny Weasley','Harry Potter Series');
+
+SELECT celebrities.name, most_known_for."most known production" FROM celebrities
+JOIN  most_known_for
+ON celebrities.name=most_known_for.name;
+
+
+
