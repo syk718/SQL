@@ -1,0 +1,4 @@
+SELECT  product, sum (quantity*price)
+FROM BIT_DB.JanSales
+GROUP BY product
+ORDER BY sum(quantity*price) desc
