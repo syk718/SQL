@@ -1,0 +1,7 @@
+SELECT
+artist_name,
+track_name,
+popularity
+FROM BIT_DB.SpotifyData
+Order BY popularity DESC
+LIMIT 10
