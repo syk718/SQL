@@ -1,0 +1,11 @@
+SELECT 
+customers.FirstName,
+customers.LastName,
+invoices.InvoiceID, 
+invoices.BillingCountry, 
+invoices.InvoiceDate
+ FROM chinook.invoices
+LEFT JOIN chinook.customers 
+ON invoices.customerID= customers.customerID
+WHERE invoices.Billingcountry = 'Brazil';
+
