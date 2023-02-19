@@ -1,11 +1,46 @@
-SELECT 
-customers.FirstName,
-customers.LastName,
-invoices.InvoiceID, 
-invoices.BillingCountry, 
-invoices.InvoiceDate
- FROM chinook.invoices
-LEFT JOIN chinook.customers 
-ON invoices.customerID= customers.customerID
-WHERE invoices.Billingcountry = 'Brazil';
+SELECT distinct location, count(orderID)
+FROM BIT_DB.JanSales
+WHERE location LIKE '%NY%'
+AND length(orderid) = 6 
+AND orderid <> 'Order ID'
+GROUP BY location
+HAVING count(orderID)>2;
+
+
+SELECT sum(Quantity) as quantity,
+Product
+FROM BIT_DB.FebSales 
+WHERE Product like '%Headphones%'
+GROUP BY Product
+
+
+SELECT sum(quantity*price)/count(cust.acctnum)
+FROM BIT_DB.FebSales Feb
+
+LEFT JOIN BIT_DB.customers cust
+ON FEB.orderid=cust.order_id
+
+WHERE length(orderid) = 6 
+AND orderid <> 'Order ID'
+
+
+SELECT SUM(quantity)/count(cust.acctnum)
+FROM BIT_DB.FebSales Feb
+
+LEFT JOIN BIT_DB.customers cust
+ON FEB.orderid=cust.order_id
+
+WHERE length(orderid) = 6 
+AND orderid <> 'Order ID'
+
+
+SELECT product, 
+sum(quantity*price)
+FROM BIT_DB.JanSales 
+GROUP BY product
+ORDER BY sum(quantity*price) desc 
+LIMIT 1
+
+
+
 
