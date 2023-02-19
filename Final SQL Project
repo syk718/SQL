@@ -1,3 +1,87 @@
+SELECT FirstName, LastName, CustomerID, Country
+FROM chinook.customers
+WHERE Country <> 'USA'
+
+
+SELECT FirstName, LastName, CustomerID, Country
+FROM chinook.customers
+WHERE Country = 'Brazil'
+
+
+SELECT customers.FirstName,
+customers.LastName,
+invoices.InvoiceID, 
+invoices.BillingCountry, 
+invoices.InvoiceDate
+ FROM chinook.invoices
+LEFT JOIN chinook.customers 
+ON invoices.customerID= customers.customerID
+WHERE invoices.Billingcountry = 'Brazil'
+
+
+SELECT * FROM chinook.employees
+WHERE title = 'Sales Support Agent'
+
+
+SELECT DISTINCT BillingCountry
+FROM chinook.invoices
+
+
+SELECT emp.FirstName, emp.LastName, inv.invoiceID
+FROM chinook.employees as emp
+JOIN chinook.customers as cust
+ON cust.SupportRepId = emp.EmployeeId
+JOIN chinook.invoices as inv
+ON cust.customerid= inv.invoiceid
+
+
+SELECT cust.FirstName as custFirstName,
+cust.LastName as custLastName, 
+cust.Country, 
+emp.FirstName, 
+emp.LastName,
+ inv.total
+FROM chinook.employees as emp
+JOIN chinook.customers as cust
+ON cust.SupportRepId = emp.EmployeeId
+JOIN chinook.invoices as inv
+ON cust.CustomerId = inv.CustomerId
+
+
+SELECT COUNT (*) 
+FROM chinook.invoices 
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
+
+
+SELECT tracks.name, invoice_items.InvoiceLineId
+FROM chinook.invoice_items
+JOIN chinook.tracks
+ON invoice_items.TrackId = tracks.TrackId
+
+
+SELECT t.name AS 'Track Name', g.name AS 'Genre', mt.name AS 'Media Type', al.title AS 'Album Name'
+FROM chinook.tracks as t
+JOIN chinook.genres as g
+ON t.genreid = g.genreid
+JOIN chinook.media_types as mt
+ON t.MediaTypeid = mt.MediaTypeId
+JOIN chinook.albums as al
+ON al.AlbumId = t.AlbumId
+
+
+
+SELECT emp.FirstName, emp.LastName,
+ROUND(SUM(Inv.Total), 2) as 'Total Sales' 
+FROM chinook.Employees emp
+JOIN chinook.Customers cust 
+ON cust.SupportRepId = emp.EmployeeId
+JOIN chinook.Invoices Inv 
+ON Inv.CustomerId = cust.CustomerId
+WHERE emp.Title = 'Sales Support Agent' 
+GROUP BY emp.FirstName
+
+
+
 SELECT emp.FirstName, emp.LastName,
 ROUND(SUM(Inv.Total), 2) as 'Total Sales' 
 FROM chinook.Employees emp
